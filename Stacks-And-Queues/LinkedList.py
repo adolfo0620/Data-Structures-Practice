@@ -5,7 +5,7 @@ class Node():
 		self.cargo = cargo
 		self.pointer = pointer
 
-	def has_next_node():
+	def has_next_node(self):
 		if self.pointer:
 			return True
 		return False
@@ -47,7 +47,14 @@ class TestLinkedList(unittest.TestCase):
 
 class TestNode(unittest.TestCase):
 	def test_node(self):
-		pass
+		node = Node("first", None)
+		self.assertEqual(node.cargo, "first")
+		self.assertEqual(node.pointer, None)
 
 	def test_has_next_node(self):
-		pass
+		node = Node("first", None)
+		self.assertFalse(node.has_next_node())
+
+
+if __name__ == '__main__':
+    unittest.main() 
