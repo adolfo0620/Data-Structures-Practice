@@ -1,11 +1,11 @@
+import unittest
 
-
-class node():
+class Node():
 	def __init__(self, cargo, pointer):
 		self.cargo = cargo
 		self.pointer = pointer
 
-	def hasNextNode():
+	def has_next_node():
 		if self.pointer:
 			return True
 		return False
@@ -16,7 +16,7 @@ class LinkedList():
 
 	def __get_last_node(self):
 		passing_node = self.root_node
-		while passing_node.hasNextNode():
+		while passing_node.has_next_node():
 			passing_node = passing_node.pointer
 		return passing_node
 
@@ -28,8 +28,26 @@ class LinkedList():
 		passing_node = self.root_node
 		prev_passing_node = None
 		next_passing_node = None
-		while passing_node.hasNextNode() and passing_node.cargo != cargo:
+		while passing_node.has_next_node() and passing_node.cargo != cargo:
 			prev_passing_node = passing_node
 			passing_node = passing_node.pointer
 			next_passing_node = passing_node.pointer
 		prev_passing_node.pointer = next_passing_node
+
+
+class TestLinkedList(unittest.TestCase):
+	def test_get_last_node(self):
+		pass
+	
+	def test_append(self):
+		pass
+	
+	def test_delete_by_cargo(self):
+		pass
+
+class TestNode(unittest.TestCase):
+	def test_node(self):
+		pass
+
+	def test_has_next_node(self):
+		pass
