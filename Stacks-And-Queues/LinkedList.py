@@ -55,6 +55,9 @@ class TestNode(unittest.TestCase):
 		node = Node("first", None)
 		self.assertFalse(node.has_next_node())
 
+		node.pointer = Node("second", None)
+		self.assertTrue(node.has_next_node())
+
 
 if __name__ == '__main__':
     unittest.main() 
